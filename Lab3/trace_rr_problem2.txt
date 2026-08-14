@@ -1,0 +1,83 @@
+Problem 2 — Trace the RR Skeleton
+Problem 1 processes:
+P1: AT=0, BT=6
+P2: AT=2, BT=4
+P3: AT=4, BT=7
+P4: AT=6, BT=3
+
+Time Quantum Q = 4
+
+Initial values:
+time = 0
+rem_bt = [6, 4, 7, 3]
+completed = 0
+
+Important assumption:
+This trace follows the exact RR skeleton given in Section 6.2 of the lab sheet.
+The skeleton scans i = 0 to n-1 in every while-loop iteration. It is therefore a
+trace of the provided skeleton, not a correction of its queue behavior. ̰
+
+Trace:
+
+WHILE ITERATION 1
+Start: time = 0, rem_bt = [6, 4, 7, 3]
+
+i = 0 -> P1 has arrived.
+rem_bt[0] = 6 > Q(4)
+Run P1 for 4 units.
+time = 4
+rem_bt = [2, 4, 7, 3]
+
+i = 1 -> P2 has arrived (AT=2).
+rem_bt[1] = 4 is not greater than Q.
+Run P2 for 4 units and finish it.
+time = 8
+rem_bt = [2, 0, 7, 3]
+
+i = 2 -> P3 has arrived (AT=4).
+rem_bt[2] = 7 > Q.
+Run P3 for 4 units.
+time = 12
+rem_bt = [2, 0, 3, 3]
+
+i = 3 -> P4 has arrived (AT=6).
+rem_bt[3] = 3 <= Q.
+Run P4 for 3 units and finish it.
+time = 15
+rem_bt = [2, 0, 3, 0]
+
+After WHILE iteration 1:
+time = 15
+rem_bt = [2, 0, 3, 0]
+completed = 2
+
+WHILE ITERATION 2
+Start: time = 15, rem_bt = [2, 0, 3, 0]
+
+i = 0 -> P1 still has 2 units.
+2 <= Q, so P1 finishes.
+time = 17
+rem_bt = [0, 0, 3, 0]
+completed = 3
+
+i = 1 -> P2 is already finished. Nothing happens.
+
+i = 2 -> P3 still has 3 units.
+3 <= Q, so P3 finishes.
+time = 20
+rem_bt = [0, 0, 0, 0]
+completed = 4
+
+i = 3 -> P4 is already finished. Nothing happens.
+
+After WHILE iteration 2:
+time = 20
+rem_bt = [0, 0, 0, 0]
+completed = 4
+
+Final result:
+All processes are completed.
+Final time = 20.
+
+For reference, the execution order produced by the given skeleton is:
+P1(0-4) -> P2(4-8) -> P3(8-12) -> P4(12-15) -> P1(15-17) -> P3(17-20)
