@@ -1,0 +1,16 @@
+File: test1.txt
+Chars: 34
+Lines: 1
+Words: 7
+a: 1
+d: 1
+e: 3
+f: 1
+h: 2
+i: 3
+l: 4
+o: 2
+r: 1
+s: 3
+t: 3
+w: 1
