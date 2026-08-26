@@ -3,15 +3,13 @@
 #include <pthread.h>
 
 int N, M, P;
-
-int **A;
-int **B;
-int **C;
+int **A, **B, **C;
 
 void *multiply_row(void *arg)
 {
     int row = *(int *)arg;
 
+    // This thread calculates one row of C
     for (int j = 0; j < P; j++)
     {
         C[row][j] = 0;
@@ -30,6 +28,7 @@ int main()
     printf("Enter N, M and P: ");
     scanf("%d %d %d", &N, &M, &P);
 
+    // Allocate memory for the matrices
     A = malloc(N * sizeof(int *));
     B = malloc(M * sizeof(int *));
     C = malloc(N * sizeof(int *));
@@ -63,9 +62,12 @@ int main()
     for (int i = 0; i < N; i++)
     {
         row[i] = i;
+
+        // Create one thread for each row
         pthread_create(&threads[i], NULL, multiply_row, &row[i]);
     }
 
+    // Wait for all threads to finish
     for (int i = 0; i < N; i++)
         pthread_join(threads[i], NULL);
 
@@ -79,6 +81,7 @@ int main()
         printf("\n");
     }
 
+    // Free allocated memory
     for (int i = 0; i < N; i++)
         free(A[i]);
 
