@@ -4,9 +4,9 @@ This repository contains my lab work, assignments, implementations, and practice
 
 The main goal of this repository is to build a practical understanding of Operating System concepts by implementing and experimenting with them in C.
 
-## 📚 What I Will Cover
+## 📚 Topics Covered
 
-Throughout the labs, I will be working on concepts such as:
+The labs in this repository cover:
 
 - Process creation and management
 - System calls
@@ -24,14 +24,11 @@ Throughout the labs, I will be working on concepts such as:
 
 | Lab | Topic | Status |
 |-----|-------|--------|
-| Lab 1 | — | 🔄 Upcoming |
-| Lab 2 | — | 🔄 Upcoming |
-| Lab 3 | CPU Scheduling — Round Robin |
-| Lab 4 | — | 🔄 Upcoming |
-| Lab 5 | — | 🔄 Upcoming |
-| ... | ... | ... |
-
-> The table will be updated as new labs are completed.
+| Lab 2 | Processes, system calls, signals, file I/O, and `fork`/`wait` | Complete |
+| Lab 3 | CPU scheduling — Round Robin | Complete |
+| Lab 4 | Matrix multiplication using POSIX threads | Complete |
+| Lab 5 | Mutexes, condition variables, and a bounded print queue | Complete |
+| Lab 6 | Semaphores, producer-consumer synchronization, worker threads, and readers-writers | Complete |
 
 ## 💻 Language & Tools
 
@@ -42,16 +39,43 @@ Throughout the labs, I will be working on concepts such as:
 
 ## 📁 Repository Structure
 
-Each lab will have its own directory:
+Each lab has its own directory:
 
 ```text
 OS/
-├── Lab-01/
-├── Lab-02/
-├── Lab-03/
-│   ├── rr_scheduling.c
-│   ├── problem2_trace.txt
-│   └── README.md
-├── Lab-04/
-├── Lab-05/
+├── Lab2/
+│   ├── Assignment_1/
+│   └── Assignment_2/
+├── Lab3/
+│   ├── Round-Robin_Scheduling.c
+│   └── trace_rr_problem2.txt
+├── Lab4/
+│   └── Matrix_Multiplication.c
+├── Lab5/
+│   ├── counter_no_mutex.c
+│   ├── counter_mutex.c
+│   ├── bank.c
+│   └── print_queue.c
+├── Lab6/
+│   ├── Q1.c
+│   ├── Q2.c
+│   └── Q3.c
 └── README.md
+
+
+## 🔧 Compiling
+
+Most programs can be compiled with GCC and POSIX thread support:
+
+```bash
+gcc source_file.c -o program_name -pthread
+./program_name
+```
+
+For example:
+
+```bash
+gcc Lab6/Q1.c -o Lab6/q1 -pthread
+gcc Lab6/Q2.c -o Lab6/q2 -pthread
+gcc Lab6/Q3.c -o Lab6/q3 -pthread
+```
