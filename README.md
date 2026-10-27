@@ -61,8 +61,12 @@ OS/
 │   ├── Q1.c
 │   ├── Q2.c
 │   └── Q3.c
+├── Lab7/
+│   ├── Q1.c
+│   ├── Q2.c
+│   └── README.md
 └── README.md
-
+```
 
 ## 🔧 Compiling
 
@@ -79,4 +83,11 @@ For example:
 gcc Lab6/Q1.c -o Lab6/q1 -pthread
 gcc Lab6/Q2.c -o Lab6/q2 -pthread
 gcc Lab6/Q3.c -o Lab6/q3 -pthread
+```
+
+Lab 7 programs don't use threads, so `-pthread` isn't needed:
+
+```bash
+gcc Lab7/Q1.c -o Lab7/q1
+gcc Lab7/Q2.c -o Lab7/q2
 ```
