@@ -29,6 +29,7 @@ The labs in this repository cover:
 | Lab 4 | Matrix multiplication using POSIX threads | Complete |
 | Lab 5 | Mutexes, condition variables, and a bounded print queue | Complete |
 | Lab 6 | Semaphores, producer-consumer synchronization, worker threads, and readers-writers | Complete |
+| Lab 7 | Memory segmentation and paging (address translation) | Complete |
 
 ## 💻 Language & Tools
 
