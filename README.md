@@ -30,6 +30,7 @@ The labs in this repository cover:
 | Lab 5 | Mutexes, condition variables, and a bounded print queue | Complete |
 | Lab 6 | Semaphores, producer-consumer synchronization, worker threads, and readers-writers | Complete |
 | Lab 7 | Memory segmentation and paging (address translation) | Complete |
+| Lab 9 | Paging, page replacement (FIFO/LRU/Optimal), and demand paging | Complete |
 
 ## 💻 Language & Tools
 
@@ -65,6 +66,11 @@ OS/
 │   ├── Q1.c
 │   ├── Q2.c
 │   └── README.md
+├── Lab9/
+│   ├── Q1.c
+│   ├── Q2.c
+│   ├── Q3.c
+│   └── README.md
 └── README.md
 ```
 
@@ -85,9 +91,12 @@ gcc Lab6/Q2.c -o Lab6/q2 -pthread
 gcc Lab6/Q3.c -o Lab6/q3 -pthread
 ```
 
-Lab 7 programs don't use threads, so `-pthread` isn't needed:
+Lab 7 and Lab 9 programs don't use threads, so `-pthread` isn't needed:
 
 ```bash
 gcc Lab7/Q1.c -o Lab7/q1
 gcc Lab7/Q2.c -o Lab7/q2
+gcc Lab9/Q1.c -o Lab9/q1
+gcc Lab9/Q2.c -o Lab9/q2
+gcc Lab9/Q3.c -o Lab9/q3
 ```
